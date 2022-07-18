@@ -1,9 +1,12 @@
+import model from "../models/task.js";
+
 export const getAllTasks = (req, res) => {
   res.send("all tasks");
 };
 
-export const createTask = (req, res) => {
-  res.json(req.body);
+export const createTask = async (req, res) => {
+  const Task = await model.create(req.body)
+  res.json(Task);
 };
 
 export const deleteTask = (req, res) => {
