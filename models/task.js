@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const TaskSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required:true 
   },
   completed: {
     type: Boolean,
-    required: false,
+    default:false
   },
 });
 
-const model = mongoose.model("Task", TaskSchema);
-export default model;
+const Model = mongoose.model("Task", TaskSchema);
+export default Model;
